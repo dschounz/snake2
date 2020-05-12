@@ -9,7 +9,7 @@ let ellipseObjects = [];
 let numEllipses = 10;
 
 function setup() {
-  createCanvas(windowWidth, windoHeight);
+  createCanvas(400, 400);
   w = floor(width / rez);
   h = floor(height / rez);
   frameRate(s);
@@ -72,7 +72,7 @@ function draw() {
 
     textStyle(BOLD);
     textSize(2);
-    text('GAME OVER', windowWidth/2, windoHeight/2);
+    text('GAME OVER', 10, 10);
 
     noLoop();
   }
