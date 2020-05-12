@@ -9,16 +9,16 @@ let ellipseObjects = [];
 let numEllipses = 10;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windoHeight);
   w = floor(width / rez);
   h = floor(height / rez);
   frameRate(s);
   snake = new Snake();
   foodLocation();
-  
+
   // ellipses
   for (let i = 0; i < numEllipses; i++){
-   ellipseObjects[i] = new Ellipse(i*20); 
+   ellipseObjects[i] = new Ellipse(i*20);
 }
 }
 function foodLocation() {
@@ -45,13 +45,13 @@ function keyPressed() {
 }
 
 function draw() {
-  
+
    for (let i = 0; i < numEllipses; i++){
     // store each ellipse in the ellipseObjects array
-   ellipseObjects[i].display(); 
-   ellipseObjects[i].grow(); 
+   ellipseObjects[i].display();
+   ellipseObjects[i].grow();
   }
-  
+
   scale(rez);
  background(140, 140, 20, 50);
   if (snake.eat(food)) {
@@ -65,15 +65,15 @@ function draw() {
 
 
   if (snake.endGame()) {
-    
+
     print("GAME OVER");
     background(255, 0, 0);
     textAlign(CENTER, CENTER);
-    
+
     textStyle(BOLD);
     textSize(2);
-    text('GAME OVER', 10, 10);
-    
+    text('GAME OVER', windowWidth/2, windoHeight/2);
+
     noLoop();
   }
 
@@ -81,6 +81,6 @@ function draw() {
   fill(255, 0, 0);
   //rect(food.x, food.y, 1, 1);
   ellipse(food.x, food.y, 1, 1);
-  
- 
+
+
 }
